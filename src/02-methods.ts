@@ -24,7 +24,7 @@ export class MyDate {
   }
 }
 
-const myDate = new MyDate(2021, 3, 13);
+const myDate = new MyDate(1993, 7, 9);
 console.log(myDate.printFormat());
 
 myDate.add(3, 'days');

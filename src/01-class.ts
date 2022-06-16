@@ -33,4 +33,4 @@ export class MyDate {
 
 // class instance
 const myDate = new MyDate(2021, 3, 13);
-console.log(myDate));
+console.log(myDate);
