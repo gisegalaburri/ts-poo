@@ -26,11 +26,11 @@ export class MyDate {
     this.day = day;
   }
 
-  getDate(): string {
-    return `${this.day}/${this.month}/${this.year}`;
-  }
+  // getDate(): string {
+  //   return `${this.day}/${this.month}/${this.year}`;
+  // }
 }
 
 // class instance
 const myDate = new MyDate(2021, 3, 13);
-console.log(myDate.getDate());
+console.log(myDate));
