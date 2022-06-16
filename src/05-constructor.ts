@@ -3,7 +3,7 @@ export class MyDate {
   // shorthand for the constructor and the attrs, definition and assignment
   // declare the access modifier is a must to the constructor understand that are attrs of the class
   constructor(
-    public year: number = 1993,
+    public year: number = 1993, // default value
     public month: number = 7,
     private day: number = 9
     ) {}
