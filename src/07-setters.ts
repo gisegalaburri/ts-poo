@@ -4,13 +4,13 @@ export class MyDate {
   // declare the access modifier is a must to the constructor understand that are attrs of the class
   constructor(
     public year: number = 1993, // default value
-    public month: number = 7,
+    private _month: number = 7,
     private _day: number = 9
     ) {}
 
   printFormat(): string {
     const day = this.addPadding(this._day);
-    const month = this.addPadding(this.month);
+    const month = this.addPadding(this._month);
     return `${day}/${month}/${this.year}`;
   }
 
@@ -22,7 +22,7 @@ export class MyDate {
     if (type === 'days') {
       this._day += amount;
     } else if (type === 'months') {
-      this.month += amount;
+      this._month += amount;
     } else if (type === 'years') {
       this.year += amount;
     }
@@ -48,7 +48,27 @@ export class MyDate {
     return true;
   }
 
+  get month() {
+    return this._month;
+  }
+
+  set month(value: number) {
+    this._month = value;
+    if (value >= 1 && value <= 12) {
+      this._month = value;
+    } else {
+      throw new Error('Month out of range');
+    }
+  }
 }
 
 const myDate = new MyDate(1993, 7, 9);
 console.log(myDate.printFormat());
+myDate.month = 4;
+console.log(myDate.month);
+
+myDate.month = 78;
+// not logged cause throws an exception
+console.log(myDate.month);
+
+
