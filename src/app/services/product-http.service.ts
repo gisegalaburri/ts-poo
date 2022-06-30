@@ -7,6 +7,18 @@ import { ProductService } from "../models/product.service.model";
 export class ProductHttpService implements ProductService {
   private url = 'https://api.escuelajs.co/api/v1/products';
 
+  // private url = '';
+  static instance: ProductHttpService | null = null;
+
+  static create() {
+    if (ProductHttpService.instance === null) {
+      console.log('call once')
+      ProductHttpService.instance = new ProductHttpService();
+    }
+
+    return ProductHttpService.instance;
+  }
+
   async getAll(): Promise<Product[]> {
     const { data } = await axios.get<Product[]>(this.url);
     return data;
