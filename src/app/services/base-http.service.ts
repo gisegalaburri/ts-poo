@@ -8,7 +8,7 @@ export class BaseHttpService<T> {
   // data: T[] = [];
 
   constructor(
-    private url: string
+    protected url: string
   ) {}
 
   async getAll() {
